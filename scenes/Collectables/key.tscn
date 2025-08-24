@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b58wm8p3gyf3f"]
+
+[ext_resource type="Script" uid="uid://bk7kvv2m72f67" path="res://scripts/key.gd" id="1_3kcvn"]
+[ext_resource type="Texture2D" uid="uid://ctq0xgoobkhw5" path="res://kenney_pixel-platformer/Tiles/tile_0027.png" id="2_piwma"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yk2u2"]
+radius = 6.0
+height = 20.0
+
+[node name="key" type="Area2D"]
+script = ExtResource("1_3kcvn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_piwma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yk2u2")
+one_way_collision_margin = 52.8

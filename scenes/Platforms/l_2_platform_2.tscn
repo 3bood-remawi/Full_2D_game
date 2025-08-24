@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dag72gl1tcog8"]
+
+[ext_resource type="Texture2D" uid="uid://dkoebgsgn3hsh" path="res://kenney_pixel-platformer/Tilemap/tilemap.png" id="1_1rip0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4n1p"]
+size = Vector2(67, 10)
+
+[node name="l2platform2" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1rip0")
+region_enabled = true
+region_rect = Rect2(133, 102, 19, 10)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+texture = ExtResource("1_1rip0")
+region_enabled = true
+region_rect = Rect2(133, 102, 19, 10)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+texture = ExtResource("1_1rip0")
+region_enabled = true
+region_rect = Rect2(133, 102, 19, 10)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(49, 0)
+texture = ExtResource("1_1rip0")
+region_enabled = true
+region_rect = Rect2(133, 102, 19, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23.5, 1)
+shape = SubResource("RectangleShape2D_y4n1p")
+one_way_collision = true

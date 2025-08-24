@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://usls8236bfm0"]
+
+[ext_resource type="Script" uid="uid://gw4jsyibb035" path="res://scripts/quiz_panel.gd" id="1_501xa"]
+
+[node name="QuizUI" type="CanvasLayer"]
+
+[node name="QuizPanel" type="Panel" parent="."]
+offset_left = -594.0
+offset_top = 637.0
+offset_right = -554.0
+offset_bottom = 677.0
+size_flags_vertical = 4
+script = ExtResource("1_501xa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuizPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionLabel" type="Label" parent="QuizPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option1" type="Button" parent="QuizPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option2" type="Button" parent="QuizPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option3" type="Button" parent="QuizPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="QuizPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ApiRequest" type="HTTPRequest" parent="QuizPanel/VBoxContainer"]

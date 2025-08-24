@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp2d3wh1eyy4x"]
+
+[ext_resource type="PackedScene" uid="uid://bhw2kfuhh7q3v" path="res://scenes/Levels/Level2.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bj1sgqmohyqfy" path="res://scenes/Levels/Level1.tscn" id="1_yqjtg"]
+
+[node name="Game1" type="Node"]
+
+[node name="Level1" parent="." instance=ExtResource("1_yqjtg")]
+
+[node name="Level2" parent="." instance=ExtResource("1_uwrxv")]
+visible = false

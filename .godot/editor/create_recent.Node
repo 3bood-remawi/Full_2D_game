@@ -1,8 +1,6 @@
 Node
 CollisionShape2D
 Node2D
-NobodyWhoChat
-NobodyWhoModel
 HTTPRequest
 Button
 Label

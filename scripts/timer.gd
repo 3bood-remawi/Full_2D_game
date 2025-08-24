@@ -1,10 +1,10 @@
 extends Node2D
 
-var time_left := 20
+var time_left := 30
 @onready var time_label = get_node("CanvasLayer/Panel/Label")
 @onready var game_timer = $GameTimer
 @onready var player = get_node("../Player")
-@onready var game_over_ui = get_node("../CanvasLayer")
+@onready var game_over_ui = get_node("../TryAgainPanel")
 
 func _ready():
 	update_time_label()

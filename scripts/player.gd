@@ -11,6 +11,7 @@ var last_safe_platform : Node2D = null
 
 func _physics_process(delta: float) -> void:
 	
+	
 	if not can_move:
 		return
 		
@@ -74,3 +75,7 @@ func disable_player():
 	can_move = false
 	animated_sprite.play("idle")
 	velocity = Vector2.ZERO
+
+
+func _on_pause_texture_button_pressed() -> void:
+	GameManager.pause_game()

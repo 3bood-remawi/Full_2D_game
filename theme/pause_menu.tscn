@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c87wqwjclsaek"]
+
+[ext_resource type="Texture2D" uid="uid://b1h0mantntupu" path="res://theme/Screenshot 2025-08-24 063542.png" id="1_0e5oh"]
+[ext_resource type="Theme" uid="uid://j6wtxxl2c81j" path="res://theme/game_theme.tres" id="2_iix1p"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 0.729412, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0e5oh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_iix1p")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="continueButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"

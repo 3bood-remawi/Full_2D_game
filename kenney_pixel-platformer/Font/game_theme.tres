@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b12wda40h1rl1"]
+
+[ext_resource type="FontFile" uid="uid://bgsswfkmf5vat" path="res://theme/GravityRegular5.ttf" id="1_84gcg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84gcg"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.584314, 0.603922, 0.694118, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.796078, 0.505882, 0.368627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kanq1"]
+bg_color = Color(0.172549, 0.772549, 0.964706, 0.878431)
+
+[resource]
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("1_84gcg")
+Button/styles/normal = SubResource("StyleBoxFlat_84gcg")
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_kanq1")

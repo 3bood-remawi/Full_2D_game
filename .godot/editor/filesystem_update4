@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 res://scenes/game.tscn
 res://scenes/Levels/Level1.tscn
 res://scenes/Platforms/SnowPlatform.tscn
@@ -20,3 +21,6 @@ res://kenney_pixel-platformer/Font/game_theme.tres
 res://scripts/player.gd
 res://scripts/pause_menu.gd
 res://scenes/pause_menu.tscn
+=======
+res://scenes/Levels/Level2.tscn
+>>>>>>> 2bc8372090b47f8b81013a4283c0367ec92b0ed4

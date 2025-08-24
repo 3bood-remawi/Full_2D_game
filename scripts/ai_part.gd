@@ -1,13 +1,14 @@
-extends Node2D
+extends CanvasLayer
 
-@onready var keys_container := $Keys
+const LEVEL_1 = preload("res://scenes/Levels/Level1.tscn")
+@onready var keys_container : Node = LEVEL_1.get_node("Keys")
 #@onready var key: Area2D = $Keys/key1
-@onready var panel = $AIPart/QuestionPanel
-@onready var question_label = $AIPart/QuestionPanel/VBoxContainer/QuestionLabel
-@onready var answer_input = $AIPart/QuestionPanel/VBoxContainer/AnswerInput
-@onready var check_button = $AIPart/QuestionPanel/VBoxContainer/CheckButton
-@onready var score_label = $AIPart/QuestionPanel/VBoxContainer/ScoreLabel
-@onready var chat = $AIPart/NobodyWhoChat
+@onready var panel = $QuestionPanel
+@onready var question_label = $QuestionPanel/VBoxContainer/QuestionLabel
+@onready var answer_input = $QuestionPanel/VBoxContainer/AnswerInput
+@onready var check_button = $QuestionPanel/VBoxContainer/CheckButton
+@onready var score_label = $QuestionPanel/VBoxContainer/ScoreLabel
+@onready var chat = $NobodyWhoChat
 var current_question = ""
 var current_answer = ""
 var key_collected = false

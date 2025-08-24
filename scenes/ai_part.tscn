@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyv3nck6etif3"]
+[gd_scene load_steps=3 format=3 uid="uid://dyv3nck6etif3"]
+
+[ext_resource type="Script" uid="uid://cihpd4tpnoy2o" path="res://scripts/ai_part.gd" id="1_ojecx"]
 
 [sub_resource type="Theme" id="Theme_i2gr7"]
 
 [node name="AI Part" type="CanvasLayer"]
+script = ExtResource("1_ojecx")
 
 [node name="QuestionPanel" type="Panel" parent="."]
 visible = false

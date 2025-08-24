@@ -9,8 +9,48 @@ const JUMP_VELOCITY = -300.0
 var last_safe_position : Vector2
 var last_safe_platform : Node2D = null 
 
+@export var climb_speed: float = 110.0
+@export var climb_horizontal_factor: float = 0.5
+@onready var ladder_tilemap: TileMapLayer = $"../tileMaps/Ladders"
+var on_ladder: bool = false
+
+
 func _physics_process(delta: float) -> void:
-	
+	# climping ladders
+	var dir := Input.get_axis("ui_left", "ui_right")
+	var up := Input.is_action_pressed("ui_up")
+	var down := Input.is_action_pressed("ui_down")
+
+	var in_ladder := is_in_ladder()
+
+	if in_ladder and (up or down):
+		on_ladder = true
+	elif not in_ladder:
+		on_ladder = false
+
+	if on_ladder:
+		velocity.y = 0.0
+		if up:
+			velocity.y = -climb_speed
+		elif down:
+			velocity.y = climb_speed
+
+		velocity.x = dir * SPEED * climb_horizontal_factor
+
+		if Input.is_action_just_pressed("ui_accept"):
+			on_ladder = false
+			velocity.y = JUMP_VELOCITY
+
+		_play_climb_anim(up or down)
+
+		if dir > 0.0:
+			animated_sprite.flip_h = false
+		elif dir < 0.0:
+			animated_sprite.flip_h = true
+
+		move_and_slide()
+		return
+		
 	if not can_move:
 		return
 		
@@ -31,7 +71,7 @@ func _physics_process(delta: float) -> void:
 				# Save GLOBAL position for static floor
 				last_safe_platform = null
 				last_safe_position = global_position
-
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -74,3 +114,31 @@ func disable_player():
 	can_move = false
 	animated_sprite.play("idle")
 	velocity = Vector2.ZERO
+
+func is_in_ladder() -> bool:
+	if ladder_tilemap == null:
+		return false
+
+	var sample_offsets := [Vector2.ZERO, Vector2(-6, 0), Vector2(6, 0)]
+	for off in sample_offsets:
+		var lp := ladder_tilemap.to_local(global_position + off)
+		var cell: Vector2i = ladder_tilemap.local_to_map(lp)
+		var td := ladder_tilemap.get_cell_tile_data(cell)  # <-- بدون رقم طبقة
+		if td and td.get_custom_data("ladder") == true:
+			return true
+	return false
+
+
+func _safe_play(anim: String) -> void:
+	if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation(anim):
+		if animated_sprite.animation != anim:
+			animated_sprite.play(anim)
+
+
+func _play_climb_anim(moving: bool) -> void:
+	if moving and animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("climb"):
+		_safe_play("climb")
+	elif animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("climb_idle"):
+		_safe_play("climb_idle")
+	else:
+		_safe_play("idle")

@@ -1,5 +1,6 @@
 extends Area2D
 
+#@onready var level_1: Node2D = $".."
 var number_of_keys = 1
 @export var target_scene : PackedScene
 @onready var label: Label = $"../Label"

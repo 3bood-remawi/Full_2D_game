@@ -142,3 +142,7 @@ func _play_climb_anim(moving: bool) -> void:
 		_safe_play("climb_idle")
 	else:
 		_safe_play("idle")
+
+
+func _on_pause_texture_button_pressed() -> void:
+	GameManager.pause_game()

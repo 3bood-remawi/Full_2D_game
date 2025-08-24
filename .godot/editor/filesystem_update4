@@ -1,2 +1,27 @@
+<<<<<<< HEAD
+res://scenes/game.tscn
+res://scenes/Levels/Level1.tscn
+res://scenes/Platforms/SnowPlatform.tscn
+res://scenes/Platforms/SpringPlatform.tscn
+res://scenes/canvas_layer.tscn
+res://scenes/door.tscn
+res://scenes/kill_zone.tscn
+res://scenes/level_2.tscn
+res://scenes/player.tscn
+res://scenes/Questions.tscn
+res://scenes/quiz_ui.tscn
+res://scenes/Platforms/l_2_platform_2.tscn
+res://scenes/Platforms/Ll_2_platform.tscn
+res://theme/game_manager.gd
+res://theme/mean_menu.gd
+res://scenes/mean_menu.tscn
+res://theme/game_theme.tres
+res://scripts/game_manager.gd
+res://kenney_pixel-platformer/Font/game_theme.tres
+res://scripts/player.gd
+res://scripts/pause_menu.gd
+res://scenes/pause_menu.tscn
+=======
 res://scenes/Levels/Level2.tscn
 res://scripts/player.gd
+>>>>>>> 2bc8372090b47f8b81013a4283c0367ec92b0ed4

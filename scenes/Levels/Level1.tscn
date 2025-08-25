@@ -648,7 +648,7 @@ tile_map_data = PackedByteArray("AAAIABgAAwABAAEAAAAIABkAAwABAAYAAAAIABoAAwABAAc
 tile_set = SubResource("TileSet_epypp")
 
 [node name="Player" parent="." instance=ExtResource("3_yclo3")]
-position = Vector2(203, 371)
+position = Vector2(199, 370)
 
 [node name="Platforms" type="Node" parent="."]
 

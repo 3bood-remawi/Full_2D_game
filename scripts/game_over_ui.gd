@@ -23,4 +23,5 @@ func show_ui():
 	try_again_button.visible = true
 
 func _on_TryAgainButton_pressed() -> void:
+	GameManager.score
 	get_tree().reload_current_scene()

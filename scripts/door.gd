@@ -1,9 +1,7 @@
 extends Area2D
 
-#@onready var level_1: Node2D = $".."
-var number_of_keys = 1
 @export var target_scene : PackedScene
-@onready var label: Label = $"../Label"
+@onready var door_label: Label = $"../door_label"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _input(event):
@@ -17,16 +15,14 @@ func next_level():
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if number_of_keys == 1: 		
-		label.visible = true
-		label.text = "Congrats You Solve It All"
-		
+	var number_of_keys = GameManager.score
+	if number_of_keys >= 10 :
 		if !target_scene : 
 			print("no scene in this door")
 			return
 		if get_overlapping_bodies().size() > 0:
 			next_level()
 	else :
-		label.visible = true
-		label.text = "Not Enogh Keys"
+		door_label.visible = true
+		door_label.text = "Not Enogh Keys, should be 7 and more"
 		

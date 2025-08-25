@@ -2,7 +2,6 @@ extends CanvasLayer
 
 const LEVEL_1 = preload("res://scenes/Levels/Level1.tscn")
 @onready var keys_container : Node = LEVEL_1.get_node("Keys")
-#@onready var key: Area2D = $Keys/key1
 @onready var panel = $QuestionPanel
 @onready var question_label = $QuestionPanel/VBoxContainer/QuestionLabel
 @onready var answer_input = $QuestionPanel/VBoxContainer/AnswerInput

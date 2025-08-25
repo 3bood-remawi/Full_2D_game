@@ -12,8 +12,9 @@ func _process(delta: float) -> void:
 
 
 func _on_play_button_pressed() -> void:
-	GameManager.start_game()
 	queue_free()
+	GameManager.start_game()
+	
 
 
 func _on_exit_button_pressed() -> void:

@@ -4,6 +4,7 @@ extends Area2D
 @export var quiz_panel: Control        
 @export var remove_after_pickup := true
 @export var pause_game_on_open := true
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	self.body_entered.connect(_on_body_entered)
@@ -18,4 +19,4 @@ func _on_body_entered(body: Node) -> void:
 		if pause_game_on_open:
 			get_tree().paused = true
 			if remove_after_pickup:
-				queue_free()
+				animation_player.play("PickUpAnimation")

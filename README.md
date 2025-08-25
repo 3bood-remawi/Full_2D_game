@@ -106,5 +106,5 @@ They should look like this:
 
 ✅ That’s it! Enjoy playing and hacking the game 🚀  
 
-game demo : https://drive.google.com/drive/folders/1LtONkGTMLozPuQbD1RXWiH48CUQtn3_9?usp=sharing
+game demo : https://drive.google.com/file/d/1fs9B_28QUG6uh2nqFbGIkE8C2wmFC0X1/view?usp=sharing
  

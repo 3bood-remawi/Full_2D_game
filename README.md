@@ -14,4 +14,6 @@ A simple and beautiful educational game
 ## Learning Goal
 The game encourages problem-solving, quick thinking, and learning in an interactive and engaging way.
 
+## How to download the game
 
+<img width="536" height="435" alt="Screenshot 2025-08-25 055908" src="https://github.com/user-attachments/assets/ff334c76-2aa9-4c47-adfd-e2f934cbe825" />

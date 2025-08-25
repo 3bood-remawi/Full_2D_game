@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+MainMusic="*res://scenes/main_music.tscn"
 
 [display]
 

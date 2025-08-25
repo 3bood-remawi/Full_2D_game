@@ -1,7 +1,7 @@
 extends Node2D
 
-var time_left := 30
-@onready var time_label = get_node("CanvasLayer/Panel/Label")
+var time_left := 60
+@onready var time_label = get_node("CanvasLayer/Panel/HBoxContainer/Label")
 @onready var game_timer = $GameTimer
 @onready var player = get_node("../Player")
 @onready var game_over_ui = get_node("../TryAgainPanel")
@@ -15,12 +15,12 @@ func _ready():
 func update_time_label():
 	var minutes = time_left / 60
 	var seconds = time_left % 60
-	time_label.text = "Time: %02d:%02d" % [minutes, seconds]
+	time_label.text = "  %02d:%02d" % [minutes, seconds]
 
 	if time_left <= 10:
 		time_label.add_theme_color_override("font_color", Color.RED)
 	else:
-		time_label.add_theme_color_override("font_color", Color.WHITE)
+		time_label.add_theme_color_override("font_color", Color.BLACK)
 
 func _on_game_timer_timeout() -> void:
 	time_left -= 1

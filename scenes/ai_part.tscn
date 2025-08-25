@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyv3nck6etif3"]
 
-[ext_resource type="Script" uid="uid://cihpd4tpnoy2o" path="res://scripts/ai_part.gd" id="1_ojecx"]
-
 [sub_resource type="Theme" id="Theme_i2gr7"]
 
-[node name="AI Part" type="CanvasLayer"]
-script = ExtResource("1_ojecx")
+[sub_resource type="NobodyWhoSampler" id="NobodyWhoSampler_ojecx"]
+
+[node name="AIPart" type="CanvasLayer"]
 
 [node name="QuestionPanel" type="Panel" parent="."]
 visible = false
@@ -41,6 +40,7 @@ theme_override_constants/separation = 12
 [node name="QuestionLabel" type="Label" parent="QuestionPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 
 [node name="AnswerInput" type="LineEdit" parent="QuestionPanel/VBoxContainer"]
@@ -52,10 +52,20 @@ text = "Check !! "
 
 [node name="ScoreLabel" type="Label" parent="QuestionPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="NobodyWhoModel" type="NobodyWhoModel" parent="."]
 model_path = "gemma-2-2b-it-Q4_K_M.gguf"
 
-[node name="NobodyWhoChat" type="NobodyWhoChat" parent="." node_paths=PackedStringArray("model_node")]
-model_node = NodePath("../NobodyWhoModel")
-system_prompt = "you are a math teacher for a 1st grade and you will give the user question for plus and minus"
+[node name="NobodyWhoChat" type="NobodyWhoChat" parent="NobodyWhoModel" node_paths=PackedStringArray("model_node")]
+model_node = NodePath("..")
+sampler = SubResource("NobodyWhoSampler_ojecx")
+system_prompt = "You are a friendly 1st grade math teacher. 
+Only generate very simple arithmetic questions using numbers between 1 and 10. 
+Only use addition (+), subtraction (-), or multiplication (×). 
+Do not use division or big numbers. 
+Keep the format exactly:
+Question: <the equation>
+Example: 
+Question: What is 2 + 3?
+"

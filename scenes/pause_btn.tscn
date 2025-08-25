@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmordtmmx4ie"]
+
+[ext_resource type="Script" uid="uid://cgdjtbemjl4j8" path="res://scripts/pause_btn.gd" id="1_i6i31"]
+[ext_resource type="Texture2D" uid="uid://2hpuxinjw63r" path="res://kenney_pixel-platformer/Tiles/icons8-pause-32.png" id="2_fj6dd"]
+
+[node name="PauseBtn" type="CanvasLayer"]
+script = ExtResource("1_i6i31")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 1750.0
+offset_top = 6.0
+offset_right = 1790.0
+offset_bottom = 46.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureButton" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("2_fj6dd")
+
+[connection signal="pressed" from="MarginContainer/TextureRect" to="." method="_on_texture_rect_pressed"]

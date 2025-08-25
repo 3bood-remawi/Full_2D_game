@@ -8,4 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 	timer.start()
 
 func _on_timer_timeout() -> void:
+	print("in timer timeout")
 	player.position = player.last_safe_position
+	player.velocity=player.player_velocity

@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=4 uid="uid://bhw2kfuhh7q3v"]
+[gd_scene load_steps=38 format=4 uid="uid://bhw2kfuhh7q3v"]
 
 [ext_resource type="Texture2D" uid="uid://bbox3aus7i1ht" path="res://kenney_pixel-platformer/Tilemap/tilemap.png" id="1_84na2"]
 [ext_resource type="Script" uid="uid://las1s4uyo2hr" path="res://scripts/level_2.gd" id="1_g28dl"]
 [ext_resource type="Texture2D" uid="uid://dmh7pwjjyk1xs" path="res://kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_1igg8"]
 [ext_resource type="PackedScene" uid="uid://c3p1jhvhqqwum" path="res://scenes/player.tscn" id="3_xcf1u"]
 [ext_resource type="PackedScene" uid="uid://b58wm8p3gyf3f" path="res://scenes/Collectables/key.tscn" id="4_jjnbj"]
+[ext_resource type="PackedScene" uid="uid://1nk6xbubg0un" path="res://scenes/winning_screen.tscn" id="5_hvvlp"]
 [ext_resource type="PackedScene" uid="uid://b5r3dklkvkf4h" path="res://scenes/Platforms/Ll_2_platform.tscn" id="5_v5wxc"]
 [ext_resource type="PackedScene" uid="uid://bllsvsunc41og" path="res://scenes/door.tscn" id="6_g28dl"]
 [ext_resource type="PackedScene" uid="uid://dag72gl1tcog8" path="res://scenes/Platforms/l_2_platform_2.tscn" id="7_7dhlb"]
@@ -1126,6 +1127,7 @@ layer_0/tile_data = PackedInt32Array(0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0
 
 [node name="Door" parent="tileMaps" instance=ExtResource("6_g28dl")]
 position = Vector2(2550, 26)
+target_scene = ExtResource("5_hvvlp")
 
 [node name="stone" parent="tileMaps" instance=ExtResource("5_v5wxc")]
 position = Vector2(1806, 22)
@@ -1141,7 +1143,7 @@ tile_map_data = PackedByteArray("AAAdAPT/AAALAAIAAAAdAPX/AAALAAMAAAAdAPb/AAALAAM
 tile_set = SubResource("TileSet_qe5b6")
 
 [node name="Player" parent="." instance=ExtResource("3_xcf1u")]
-position = Vector2(12, -13)
+position = Vector2(18, -13)
 
 [node name="Keys" type="Node" parent="."]
 
@@ -1246,3 +1248,5 @@ position = Vector2(12, -495)
 [node name="NumOfKeysText" parent="." instance=ExtResource("14_ukhgg")]
 
 [node name="PauseBtn" parent="." instance=ExtResource("15_c3dpg")]
+
+[connection signal="body_entered" from="tileMaps/Door" to="tileMaps/Door" method="_on_body_entered"]

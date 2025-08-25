@@ -5,6 +5,7 @@ var MEAN_MENU = preload("res://scenes/mean_menu.tscn")
 # to track the number of collected keys
 var score := 0
 
+
 func start_game():
 	transition_to_scene(LEVEL_1.resource_path)
  

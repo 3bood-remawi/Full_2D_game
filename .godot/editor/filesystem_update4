@@ -1,0 +1,5 @@
+res://scenes/Levels/Level1.tscn
+res://theme/game_theme.tres
+res://scenes/Levels/Level2.tscn
+res://scenes/player.tscn
+res://scripts/game_manager.gd

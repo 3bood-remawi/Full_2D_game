@@ -7,6 +7,7 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 
 var last_safe_position : Vector2
+var player_velocity : Vector2
 var last_safe_platform : Node2D = null 
 
 @export var climb_speed: float = 110.0
@@ -16,6 +17,7 @@ var on_ladder: bool = false
 
 
 func _physics_process(delta: float) -> void:
+	
 	# climping ladders
 	var dir := Input.get_axis("ui_left", "ui_right")
 	var up := Input.is_action_pressed("ui_up")
@@ -50,7 +52,7 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 		return
-		
+	# defult movment
 	if not can_move:
 		return
 		
@@ -58,19 +60,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
-		# to save the player position to respawn in it when he fall
-		var collision = get_last_slide_collision()
-		if collision:
-			var collider = collision.get_collider()
-
-			if collider.is_in_group("platforms"):
-				# Save RELATIVE position to the moving platform
-				last_safe_platform = collider
-				last_safe_position = last_safe_platform.to_local(global_position)
-			else:
-				# Save GLOBAL position for static floor
-				last_safe_platform = null
-				last_safe_position = global_position
+		player_velocity = get_gravity() * delta /5
+		last_safe_position = Vector2(position.x,position.y-200)
+		print(last_safe_position)
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -115,6 +107,11 @@ func disable_player():
 	animated_sprite.play("idle")
 	velocity = Vector2.ZERO
 
+func enable_player():
+	can_move = true
+	animated_sprite.play("walk")
+	velocity += get_gravity() * 0.001
+	
 func is_in_ladder() -> bool:
 	if ladder_tilemap == null:
 		return false

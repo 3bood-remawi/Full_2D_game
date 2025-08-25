@@ -22,11 +22,13 @@ func _ready():
 	for k in keys_container.get_children():
 		if k is Area2D:
 			print("Connected key: ", k.name)
+			print("Connected key: ", k.name)
 			k.body_entered.connect(_on_key_collected.bind(k))
 	check_button.pressed.connect(_on_check_pressed)
 	answer_input.text_submitted.connect(func(_t): _on_check_pressed())  # Enter submits
 	chat.response_finished.connect(_on_nobody_who_chat_response_finished)
-	
+
+
 func _on_key_collected(body: Node, key_node: Area2D) -> void:
 	if body.name != "Player":
 		return

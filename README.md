@@ -7,10 +7,9 @@
 - **Player Movement:** Move freely in 2D space to explore each level.  
 - **Question Challenges:** Encounter math questions along the way.  
 - **Time Limit:** Each level has a countdown timer for added challenge.  
-- **Success Requirement:** Answer at least **70%** of questions correctly to pass.  
+- **Success Requirement:** Answer at least **10** of questions correctly to pass.  
 - **Failure Conditions:**  
-  - Time runs out before reaching the requirement.  
-  - Player falls into traps.  
+  - Time runs out before reaching the requirement.   
 - **Special Items:**  
   - Collecting a 💎 **Diamond** adds extra time to the countdown.  
 

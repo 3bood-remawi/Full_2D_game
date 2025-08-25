@@ -9,7 +9,8 @@ extends Node2D
 var current_question = ""
 var current_answer = ""
 @export var score = 0
-
+@onready var game_timer: Timer = $Timer/GameTimer
+@onready var player: CharacterBody2D = $Player
 
 func _ready():
 	panel.visible = false
@@ -31,6 +32,8 @@ func _on_key_collected(body: Node, key_node: Area2D) -> void:
 	# تفعيل البانيل
 	panel.visible = true
 	question_label.text = "AI is thinking..."
+	game_timer.paused=true
+	player.disable_player()
 	_request_ai_question()
 	
 func _request_ai_question():
@@ -87,11 +90,13 @@ func _on_check_pressed():
 		score_label.text = " : " + str(GameManager.score)
 	else:
 		question_label.text = "Wrong! The correct answer is " + str(correct_answer_i)
-
+	
 	# close after a short pause no matter what
 	await get_tree().create_timer(1.5).timeout
 	_close_question_panel()
-	
+	game_timer.paused=false
+	player.enable_player()
+
 func _on_nobody_who_chat_response_finished(response: String) -> void:
 	current_question = ""
 	current_answer = ""

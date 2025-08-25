@@ -68,21 +68,4 @@ This game encourages **problem-solving, quick thinking, and learning** in a fun 
 
 ✅ That’s it! Enjoy playing and hacking the game 🚀  
 
----
 
-## 🛠️ Tech Stack  
-- **Engine:** Godot 4.3  
-- **Language:** GDScript  
-- **AI Integration:** NobodyWho + GGUF Models  
-
----
-
-## 💡 Future Improvements  
-- Add more levels & question types  
-- Enhance UI/UX design  
-- Multiplayer quiz mode  
-
----
-
-## 📜 License  
-This project is for **educational and personal use**.  

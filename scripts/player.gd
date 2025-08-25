@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_velocity = get_gravity() * delta /5
 		last_safe_position = Vector2(position.x,position.y-200)
-		print(last_safe_position)
+		
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

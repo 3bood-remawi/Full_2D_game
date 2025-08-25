@@ -16,7 +16,7 @@ The game encourages problem-solving, quick thinking, and learning in an interact
 
 ## How to download the game
 
-<img width="536" height="435" alt="Screenshot 2025-08-25 055908" src="https://github.com/user-attachments/assets/5677e36d-3510-406d-8935-468256ad6325" />
+<img width="300" height="300" alt="Screenshot 2025-08-25 055908" src="https://github.com/user-attachments/assets/5677e36d-3510-406d-8935-468256ad6325" />
 here 
 
 then extract all the files 

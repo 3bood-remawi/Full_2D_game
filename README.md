@@ -107,6 +107,4 @@ They should look like this:
 
 ✅ That’s it! Enjoy playing and hacking the game 🚀  
 
-
-## 📜 License  
-This project is for **educational and personal use**.  
+ 

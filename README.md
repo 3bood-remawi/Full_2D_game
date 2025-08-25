@@ -19,8 +19,9 @@ The game encourages problem-solving, quick thinking, and learning in an interact
 <img width="300" height="300" alt="Screenshot 2025-08-25 055908" src="https://github.com/user-attachments/assets/5677e36d-3510-406d-8935-468256ad6325" />
 here 
 
+
 then extract all the files 
-<img width="591" height="701" alt="Screenshot 2025-08-25 055953" src="https://github.com/user-attachments/assets/da47a6b3-3a97-43b5-ae5e-2a70433fabd6" />
+<img width="300" height="300" alt="Screenshot 2025-08-25 055953" src="https://github.com/user-attachments/assets/da47a6b3-3a97-43b5-ae5e-2a70433fabd6" />
 
 open this link
 https://huggingface.co/alela32/USER-bge-m3-Q8_0-GGUF/blob/main/user-bge-m3-q8_0.gguf
